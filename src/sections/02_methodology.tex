@@ -12,18 +12,3 @@
   \includegraphics[width=0.82\textwidth]{S3_STUDENT.pdf}
 \end{frame}
 
-\begin{frame}{Pre-GAP vs Post-GAP Distillation}
-  \small
-  \begin{alertblock}{Pre-GAP Distillation}
-    The student is trained to match intermediate teacher representations before the global average pooling operation.
-  \end{alertblock}
-
-  \begin{alertblock}{Post-GAP Distillation}
-    The student is trained to match compact teacher representations after global average pooling.
-  \end{alertblock}
-
-  \begin{itemize}
-    \item Both strategies transfer knowledge from pretrained image classifiers.
-    \item The goal is to evaluate which representation level is more useful for lightweight ConvNet students.
-  \end{itemize}
-\end{frame}
