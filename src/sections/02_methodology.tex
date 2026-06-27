@@ -1,0 +1,47 @@
+% src/sections/02_methodology.tex
+
+\section{Methodology}
+
+\begin{frame}{Method Overview}
+  \small
+  \begin{itemize}
+    \item Define the classification task and selected datasets.
+    \item Train reference models under controlled experimental settings.
+    \item Evaluate student or compact models using the same metrics.
+    \item Compare results across datasets, architectures, and training strategies.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Pipeline}
+  \small
+  \begin{center}
+    \begin{tikzpicture}[
+      node distance=0.9cm,
+      box/.style={
+        rectangle,
+        rounded corners,
+        draw=SecondaryColor,
+        fill=LightAccent!20,
+        text width=2.2cm,
+        align=center,
+        minimum height=0.85cm
+      },
+      arrow/.style={-{Latex}, thick, draw=SecondaryColor}
+    ]
+      \node[box] (data) {Dataset};
+      \node[box, right=of data] (model) {Model};
+      \node[box, right=of model] (train) {Training};
+      \node[box, right=of train] (eval) {Evaluation};
+
+      \draw[arrow] (data) -- (model);
+      \draw[arrow] (model) -- (train);
+      \draw[arrow] (train) -- (eval);
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{Goal}
+    Produce a reproducible comparison that supports the final experimental conclusions.
+  \end{alertblock}
+\end{frame}

@@ -1,0 +1,112 @@
+% src/structure/engine.tex
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pifont}
+\usepackage{etoolbox}
+
+\usetikzlibrary{positioning, arrows.meta}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{{img/}{src/img/}}
+
+\definecolor{PrimaryColor}{HTML}{141B41}
+\definecolor{SecondaryColor}{HTML}{306BAC}
+\definecolor{AccentColor}{HTML}{6F9CEB}
+\definecolor{LightAccent}{HTML}{98B9F2}
+\definecolor{AlertColor}{HTML}{918EF4}
+
+\newcommand{\id}[1]{\ensuremath{\mathnormal{#1}}}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\hypersetup{
+  colorlinks=true,
+  citecolor=SecondaryColor,
+  linkcolor=PrimaryColor,
+  urlcolor=AccentColor
+}
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip1.0em}{}{}
+\makeatother
+
+\mode<presentation>
+{
+  \usetheme{Madrid}
+  \usecolortheme{default}
+  \usefonttheme{professionalfonts}
+  \setbeamertemplate{navigation symbols}{}
+
+  \setbeamertemplate{sections/subsections in toc}[ball]
+  \setbeamercolor{section number projected}{bg=PrimaryColor, fg=white}
+
+  \setbeamertemplate{frametitle}{
+    \nointerlineskip
+    \begin{beamercolorbox}[wd=\paperwidth,ht=5ex,dp=2.5ex,leftskip=0.3cm,rightskip=0.3cm]{palette primary}
+      \usebeamerfont{frametitle}
+      \fontseries{b}\selectfont
+      \Large
+      \ifnum\insertsectionnumber>0
+        \insertsectionnumber.~~
+      \fi
+      \insertframetitle
+    \end{beamercolorbox}
+  }
+
+  \setbeamertemplate{footline}{
+    \leavevmode
+    \hbox{
+    \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+      \usebeamerfont{author in head/foot}\MyShortAuthor~~\textbar~~\MyInstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+      \usebeamerfont{title in head/foot}\MyShortTitle
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}
+      \usebeamerfont{date in head/foot}\MyDate\hspace*{2em}
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}}
+    \vskip0pt
+  }
+
+  \setbeamercolor{structure}{fg=SecondaryColor}
+  \setbeamercolor{palette primary}{bg=PrimaryColor, fg=white}
+  \setbeamercolor{palette secondary}{bg=SecondaryColor, fg=white}
+  \setbeamercolor{palette tertiary}{bg=AccentColor, fg=white}
+  \setbeamercolor{titlelike}{parent=palette primary}
+  \setbeamercolor{author in head/foot}{fg=white, bg=PrimaryColor}
+  \setbeamercolor{title in head/foot}{fg=white, bg=SecondaryColor}
+  \setbeamercolor{date in head/foot}{fg=white, bg=AccentColor}
+  \setbeamercolor{block title}{bg=SecondaryColor, fg=white}
+  \setbeamercolor{block body}{bg=LightAccent!20, fg=PrimaryColor}
+  \setbeamercolor{alerted text}{fg=AlertColor}
+
+  \setbeamercolor{block title example}{bg=SecondaryColor, fg=white}
+  \setbeamercolor{block body example}{bg=LightAccent!10, fg=PrimaryColor}
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}[plain, noframenumbering]
+    \vfill
+    \centering
+    \begin{minipage}{0.9\textwidth}
+      \begin{beamercolorbox}[sep=12pt,center,rounded=true]{palette primary}
+        {\normalsize \textbf{SECTION \thesection}} \\
+        \vspace{0.2cm}
+        {\color{white!30}\rule{0.7\textwidth}{0.6pt}} \\
+        \vspace{0.4cm}
+        {\LARGE \textbf{\insertsection}}
+        \vspace{0.3cm}
+      \end{beamercolorbox}
+    \end{minipage}
+    \vfill
+  \end{frame}
+}

@@ -1,0 +1,53 @@
+% src/sections/00_title.tex
+
+\begin{frame}[plain]
+  \vfill
+  \centering
+
+  \begin{beamercolorbox}[sep=10pt,center,rounded=true]{palette primary}
+    {\fontsize{13}{17}\fontseries{b}\selectfont \textsc{\MyTitle}} \\
+    \vspace{0.2cm}
+    {\small \MySubtitle}
+  \end{beamercolorbox}
+
+  \vspace{0.6cm}
+
+  \begin{columns}[onlytextwidth, T]
+    \column{0.46\linewidth}
+    \begin{beamercolorbox}[sep=5pt,center,rounded=true]{block body}
+      \begin{minipage}[t][1.3cm][t]{\linewidth}
+        \centering
+        \footnotesize \textbf{\StudentAName} \\
+        \vfill
+        \tiny RA: \StudentARA
+      \end{minipage}
+    \end{beamercolorbox}
+
+    \hfill
+
+    \column{0.46\linewidth}
+    \begin{beamercolorbox}[sep=5pt,center,rounded=true]{block body}
+      \begin{minipage}[t][1.3cm][t]{\linewidth}
+        \centering
+        \footnotesize \textbf{\StudentBName} \\
+        \vfill
+        \tiny RA: \StudentBRA
+      \end{minipage}
+    \end{beamercolorbox}
+  \end{columns}
+
+  \vspace{0.4cm}
+
+  \textit{\small \MyInstitute} \\
+  \vspace{0.1cm}
+  {\small \textbf{\MyCourse}}
+
+  \vfill
+
+  \begin{beamercolorbox}[sep=4pt,center,rounded=true]{palette tertiary}
+    \footnotesize \textbf{Instructor:} \MyInstructor
+  \end{beamercolorbox}
+
+  \vspace{0.2cm}
+  \scriptsize \MyDate
+\end{frame}
