@@ -24,31 +24,3 @@
   \end{alertblock}
 \end{frame}
 
-\begin{frame}{Training Strategies}
-  \small
-  \begin{table}
-    \centering
-    \begin{tabular}{ll}
-      \toprule
-      \textbf{Strategy} & \textbf{Description} \\
-      \midrule
-      Baseline Student & Student trained without distillation \\
-      Pre-GAP KD & Student trained with pre-pooling teacher features \\
-      Post-GAP KD & Student trained with pooled teacher features \\
-      Multi-Loss KD & Combination of classification and distillation losses \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
-\end{frame}
-
-\begin{frame}{Evaluation Metrics}
-  \small
-  \begin{itemize}
-    \item Accuracy
-    \item Precision
-    \item Recall
-    \item F1 Score
-    \item Loss behavior during training
-    \item Comparison between teacher and lightweight students
-  \end{itemize}
-\end{frame}
