@@ -91,23 +91,3 @@
   \setbeamercolor{block title example}{bg=SecondaryColor, fg=white}
   \setbeamercolor{block body example}{bg=LightAccent!10, fg=PrimaryColor}
 }
-
-\AtBeginSection[]
-{
-  \begin{frame}[plain, noframenumbering]
-    \vfill
-    \centering
-    \begin{minipage}{0.9\textwidth}
-      \begin{beamercolorbox}[sep=12pt,center,rounded=true]{palette primary}
-        \hypersetup{linkcolor=white}
-        {\normalsize \textbf{SECTION \thesection}} \\
-        \vspace{0.2cm}
-        {\color{white!30}\rule{0.7\textwidth}{0.6pt}} \\
-        \vspace{0.4cm}
-        {\LARGE \textbf{\insertsection}}
-        \vspace{0.3cm}
-      \end{beamercolorbox}
-    \end{minipage}
-    \vfill
-  \end{frame}
-}
