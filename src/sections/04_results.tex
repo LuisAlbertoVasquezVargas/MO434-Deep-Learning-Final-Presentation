@@ -2,28 +2,46 @@
 
 \section{Results}
 
-\begin{frame}{Main Results}
-  \small
-  \begin{table}
-    \centering
-    \begin{tabular}{lcccc}
-      \toprule
-      \textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} \\
-      \midrule
-      Baseline & TBD & TBD & TBD & TBD \\
-      Proposed & TBD & TBD & TBD & TBD \\
-      Reference & TBD & TBD & TBD & TBD \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
+\begin{frame}{Flowers Accuracy}
+  \centering
+  \includegraphics[width=0.92\textwidth]{S4_FLOWERS_ACC.pdf}
 \end{frame}
 
-\begin{frame}{Result Analysis}
+\begin{frame}{Pets Accuracy}
+  \centering
+  \includegraphics[width=0.92\textwidth]{S4_PETS_ACC.pdf}
+\end{frame}
+
+\begin{frame}{Cars Accuracy}
+  \centering
+  \includegraphics[width=0.92\textwidth]{S4_CARS_ACC.pdf}
+\end{frame}
+
+\begin{frame}{MSE Loss Behavior}
+  \centering
+  \includegraphics[width=0.92\textwidth]{S4_MSE.pdf}
+\end{frame}
+
+\begin{frame}{Multi-Loss Behavior}
+  \centering
+  \includegraphics[width=0.92\textwidth]{S4_MULTI.pdf}
+\end{frame}
+
+\begin{frame}{Combined Loss Behavior}
+  \centering
+  \includegraphics[width=0.92\textwidth]{S4_COMBINED.pdf}
+\end{frame}
+
+\begin{frame}{Loss Coefficients}
+  \centering
+  \includegraphics[width=0.92\textwidth]{S4_COEFF.pdf}
+\end{frame}
+
+\begin{frame}{Main Observations}
   \small
   \begin{itemize}
-    \item Which configuration performed best?
-    \item Which dataset was more challenging?
-    \item Did the proposed method improve over the baseline?
-    \item What trade-offs appeared between performance and cost?
+    \item The accuracy plots compare teacher performance with student models under different distillation strategies.
+    \item The loss plots help explain the optimization behavior behind the final metrics.
+    \item The comparison highlights the trade-off between compact student models and teacher-level performance.
   \end{itemize}
 \end{frame}

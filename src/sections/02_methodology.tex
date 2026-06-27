@@ -2,46 +2,28 @@
 
 \section{Methodology}
 
-\begin{frame}{Method Overview}
-  \small
-  \begin{itemize}
-    \item Define the classification task and selected datasets.
-    \item Train reference models under controlled experimental settings.
-    \item Evaluate student or compact models using the same metrics.
-    \item Compare results across datasets, architectures, and training strategies.
-  \end{itemize}
+\begin{frame}{Knowledge Distillation Pipeline}
+  \centering
+  \includegraphics[width=0.96\textwidth]{S3_PIPELINE.pdf}
 \end{frame}
 
-\begin{frame}{Pipeline}
+\begin{frame}{Student Architecture}
+  \centering
+  \includegraphics[width=0.82\textwidth]{S3_STUDENT.pdf}
+\end{frame}
+
+\begin{frame}{Pre-GAP vs Post-GAP Distillation}
   \small
-  \begin{center}
-    \begin{tikzpicture}[
-      node distance=0.9cm,
-      box/.style={
-        rectangle,
-        rounded corners,
-        draw=SecondaryColor,
-        fill=LightAccent!20,
-        text width=2.2cm,
-        align=center,
-        minimum height=0.85cm
-      },
-      arrow/.style={-{Latex}, thick, draw=SecondaryColor}
-    ]
-      \node[box] (data) {Dataset};
-      \node[box, right=of data] (model) {Model};
-      \node[box, right=of model] (train) {Training};
-      \node[box, right=of train] (eval) {Evaluation};
-
-      \draw[arrow] (data) -- (model);
-      \draw[arrow] (model) -- (train);
-      \draw[arrow] (train) -- (eval);
-    \end{tikzpicture}
-  \end{center}
-
-  \vspace{0.3cm}
-
-  \begin{alertblock}{Goal}
-    Produce a reproducible comparison that supports the final experimental conclusions.
+  \begin{alertblock}{Pre-GAP Distillation}
+    The student is trained to match intermediate teacher representations before the global average pooling operation.
   \end{alertblock}
+
+  \begin{alertblock}{Post-GAP Distillation}
+    The student is trained to match compact teacher representations after global average pooling.
+  \end{alertblock}
+
+  \begin{itemize}
+    \item Both strategies transfer knowledge from pretrained image classifiers.
+    \item The goal is to evaluate which representation level is more useful for lightweight ConvNet students.
+  \end{itemize}
 \end{frame}

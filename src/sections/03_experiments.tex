@@ -6,32 +6,36 @@
   \small
   \begin{table}
     \centering
-    \begin{tabular}{lccc}
+    \begin{tabular}{ll}
       \toprule
-      \textbf{Dataset} & \textbf{Classes} & \textbf{Train} & \textbf{Test} \\
+      \textbf{Dataset} & \textbf{Task Type} \\
       \midrule
-      Dataset 1 & TBD & TBD & TBD \\
-      Dataset 2 & TBD & TBD & TBD \\
-      Dataset 3 & TBD & TBD & TBD \\
+      Oxford 102 Flowers & Fine-grained flower classification \\
+      Oxford-IIIT Pets & Fine-grained pet classification \\
+      Stanford Cars & Fine-grained car classification \\
       \bottomrule
     \end{tabular}
   \end{table}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{Common Challenge}
+    All datasets require distinguishing visually similar classes using discriminative local and global features.
+  \end{alertblock}
 \end{frame}
 
-\begin{frame}{Training Configuration}
+\begin{frame}{Training Strategies}
   \small
   \begin{table}
     \centering
     \begin{tabular}{ll}
       \toprule
-      \textbf{Parameter} & \textbf{Value} \\
+      \textbf{Strategy} & \textbf{Description} \\
       \midrule
-      Optimizer & TBD \\
-      Learning Rate & TBD \\
-      Batch Size & TBD \\
-      Epochs & TBD \\
-      Loss Function & TBD \\
-      Hardware & TBD \\
+      Baseline Student & Student trained without distillation \\
+      Pre-GAP KD & Student trained with pre-pooling teacher features \\
+      Post-GAP KD & Student trained with pooled teacher features \\
+      Multi-Loss KD & Combination of classification and distillation losses \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -44,7 +48,7 @@
     \item Precision
     \item Recall
     \item F1 Score
-    \item Model size
-    \item Computational cost
+    \item Loss behavior during training
+    \item Comparison between teacher and lightweight students
   \end{itemize}
 \end{frame}
