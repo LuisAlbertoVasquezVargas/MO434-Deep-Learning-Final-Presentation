@@ -4,13 +4,13 @@
 
 Overleaf-compatible Beamer presentation for the final project of **MO434 — Deep Learning** at **IC/UNICAMP**.
 
-This repository contains the LaTeX source code for the course final presentation. The project is organized as a modular Beamer workspace, keeping metadata, theme configuration, slide sections, figures, and utility scripts separated.
+This repository contains the LaTeX source code for the course final presentation. The project is organized as a modular Beamer workspace, keeping metadata, theme configuration, slide sections, figures, utility scripts, and generated outputs separated.
 
 ## Repository
 
 ```text
 https://github.com/LuisAlbertoVasquezVargas/MO434-Deep-Learning-Final-Presentation.git
-````
+```
 
 ## Clone Repository
 
@@ -46,52 +46,31 @@ MO434-Deep-Learning-Final-Presentation/
 
 ## Main Entry Point
 
-The main LaTeX file is:
-
 ```text
 src/main.tex
 ```
 
-When uploading the project to Overleaf, keep the same folder structure and set `src/main.tex` as the main file.
+## Render Locally
 
-## Presentation Backbone
-
-The presentation is planned with the following initial structure:
-
-```text
-Title
-Outline
-Introduction and Motivation
-Methodology
-Experimental Setup
-Results
-Conclusion
-Questions
+```bash
+cd src
+latexmk -pdf -outdir=../output main.tex
+zathura ../output/main.pdf
 ```
 
-## Overleaf Compatibility
-
-This project is intended to work both locally and on Overleaf.
-
-All LaTeX source files are placed under `src/`. Images should be stored under:
+The rendered PDF is generated at:
 
 ```text
-src/img/
-```
-
-Section files should be imported from `src/main.tex`, while presentation metadata and theme configuration should remain under:
-
-```text
-src/structure/
+output/main.pdf
 ```
 
 ## LWC Script
 
 `LWC` stands for **Last Working Code**.
 
-The `scripts/lwc.py` script is used to export the current project source into a single text file. This makes it easier to share the full project context with an LLM in one conversation.
+The script `scripts/lwc.py` exports the current project source into a single text file so the full project context can be shared with an LLM in one conversation.
 
-Default usage:
+Run from the repository root:
 
 ```bash
 python scripts/lwc.py
@@ -103,30 +82,9 @@ Default output:
 output/lwc.txt
 ```
 
-## Development Workflow
-
-A simple workflow for stable checkpoints is:
+Custom output path:
 
 ```bash
-python scripts/lwc.py
-git add .
-git commit -m "Describe checkpoint"
-git push origin main
-```
-
-If the local shell has the `gpm` alias configured, pushing can also be done with:
-
-```bash
-gpm
-```
-
-## Current Status
-
-Initial repository setup.
-
-Next planned step:
-
-```text
-Add the Overleaf-compatible Beamer backbone under src/.
+python scripts/lwc.py --output output/mo434_context.txt
 ```
 
